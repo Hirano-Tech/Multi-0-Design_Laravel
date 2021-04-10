@@ -17,3 +17,29 @@
 ###### 詳しくは、以下をご覧ください 🙇🏻‍♂️
 
 - [Docker で、PHP（Laravel）の環境構築をする。](https://zenn.dev/hirano_tech/articles/ba6a525e00761a) | [Zenn](https://zenn.dev)
+
+---
+
+### ⚙️　機能紹介
+
+##### 🔍　オフィシャルサイト内に掲載されている GU おしゃリスタ（コーディネートアドバイザー）によるスタッフスタイリングページに直接 リダイレクトする。
+
+```php
+namespace App\Http\Controllers;
+use Illuminate\Http\Request;
+
+class GU_StaffsController extends Controller
+{
+    public function store(Request $request)
+    {
+        // ↓ フォームで選択された "性別" と "ハッシュタグ" を取得する。 ↓
+        $gender = $request -> input('gender');
+        $hash_tag = substr($request -> input('tag'), 1); 
+
+        // ↓ オフィシャルサイトへリダイレクトさせる。 ↓
+        return redirect("https://www.gu-global.com/jp/ja/styling/hashtag/{$hash_tag}/?gender={$gender}");
+    }
+}
+```
+
+- [GU_StaffsController.php](/app/Http/Controllers/GU_StaffsController.php)
