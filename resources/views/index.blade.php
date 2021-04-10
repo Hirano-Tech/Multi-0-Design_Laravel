@@ -5,12 +5,13 @@
         <meta name='viewport' content='width=device-width, initial-scale=1, shrink-to-fit=no' />
         <title>Multi-0-Design</title>
         <link rel='stylesheet' href="{{ asset('/css/app.css') }}">
+        <link rel='stylesheet' href="{{ asset('/css/header.css') }}">
     </head>
 
     <body>
         <header class='container-fluid'>
             <div class='container-lg'>
-                <h1>Multi-0-Design</h1>
+                <h1><a href={{ route('root') }}>Multi-0-Design</a></h1>
             </div>
         </header>
 

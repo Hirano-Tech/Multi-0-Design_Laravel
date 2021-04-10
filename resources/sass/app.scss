@@ -6,17 +6,11 @@ body {
     font-size: 16px;
     color: #333333;
 
-    header {
-        height: 48px;
-        box-shadow: 0 8px 8px -8px rgba(#333333, 0.2);
-        margin-bottom: 32px;
-        display: flex;
-            align-items: center;
-
-        h1 {
-            font-size: 2.0rem;
-            font-weight: bold;
-            margin-top: 4px;
+    a {
+        color: #333333;
+        &:hover {
+            color: #333333;
+            text-decoration: none;
         }
     }
 
@@ -38,6 +32,22 @@ body {
                 font-size: 0.8rem;
                 margin: -26px 0 0 58px;
             }
+
+            @media (max-width: 575.98px) {
+                margin-bottom: 8px;
+                h2 { font-size: 1.0rem; }
+
+                &--Small { font-size: 0.8rem; }
+                &--Mute {
+                    font-size: 0.6rem;
+                    margin: -36px 0 0 58px;
+                }
+
+                &--Text {
+                    position: relative;
+                        top: -12px;
+                }
+            }
         }
 
         &__Form {
@@ -48,15 +58,14 @@ body {
                 display: flex;
                     flex-direction: row;
 
+                &__Ladies { margin-right: 16px; }
                 &--Title {
                     height: 1.5em;
                     padding: 2px;
                     margin: 3px 8px 0 0;
                 }
 
-                &__Ladies {
-                    margin-right: 16px;
-                }
+                @media (max-width: 575.98px) { margin: 0 0 16px -60px; }
             }
 
             &__Hash-Tag {
@@ -81,6 +90,25 @@ body {
                     &--Submit {
                         padding: 0 8px;
                         margin-top: -4px;
+                    }
+                }
+
+                @media (max-width: 575.98px) {
+                    width: 100%;
+                    margin: -8px 0 0 -32px;
+
+                    input {
+                        font-size: 0.8rem;
+                        padding: 0px 4px;
+                    }
+
+                    &__Select {
+                        font-size: 0.8rem;
+
+                        &--Submit {
+                            padding: 0 8px;
+                            margin-top: -2px;
+                        }
                     }
                 }
             }
