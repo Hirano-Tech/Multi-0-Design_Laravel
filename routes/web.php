@@ -4,7 +4,7 @@
 
     Route::get('/users/sign_in', 'SessionsController@create') -> name('new_user_session');
     Route::post('/users/sign_in', 'SessionsController@store') -> name('user_session');
-    Route::delete('/users/{id}/sign_out', 'SessionsController@destroy') -> name('destroy_user_session');
+    Route::delete('/users/sign_out', 'SessionsController@destroy') -> name('destroy_user_session');
 
     Route::get('/users/sign_up', 'RegistrationsController@create') -> name('new_user_registration');
     Route::post('/users', 'RegistrationsController@store') -> name('user_registration');
