@@ -11,7 +11,11 @@ class RegistrationsController extends Controller
 {
     public function create()
     {
-        return view('registrations/create');
+        if (!Auth::check()) {
+            return view('registrations/create');
+        } else {
+            return redirect() -> route('root');
+        }
     }
 
     public function store(Request $request)

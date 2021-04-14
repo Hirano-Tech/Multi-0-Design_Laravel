@@ -9,23 +9,27 @@ class SessionsController extends Controller
 {
     public function create()
     {
-        $all_hash_tags = array(
-            // ↓ レディース，メンズ 共通のハッシュタグ ↓
-            '#春カラー', '#きれいめコーデ', '#楽チンコーデ', '#大人コーデ', '#春休みコーデ', '#きれいめカジュアル', '#お花見コーデ', '#新生活', '#リモートワーク', '#夏コーデ', '#カジュアルコーデ',
+        if (!Auth::check()) {
+            $all_hash_tags = array(
+                // ↓ レディース，メンズ 共通のハッシュタグ ↓
+                '#春カラー', '#きれいめコーデ', '#楽チンコーデ', '#大人コーデ', '#春休みコーデ', '#きれいめカジュアル', '#お花見コーデ', '#新生活', '#リモートワーク', '#夏コーデ', '#カジュアルコーデ',
 
-            // ↓ レディースのハッシュタグ ↓
-            '#大人カジュアル',   '#フェミニントップス', '#春夏コーデ',  '#ワンピース', '#デニム',
+                // ↓ レディースのハッシュタグ ↓
+                '#大人カジュアル',   '#フェミニントップス', '#春夏コーデ',  '#ワンピース', '#デニム',
 
-            // ↓ メンズのハッシュタグ ↓
-            '#レイヤード', '#オーバーサイズ', '#オープンカラーシャツ', '#大人カジュアル', '#オトナカジュアル'
-        );
+                // ↓ メンズのハッシュタグ ↓
+                '#レイヤード', '#オーバーサイズ', '#オープンカラーシャツ', '#大人カジュアル', '#オトナカジュアル'
+            );
 
-        $hash_tags = array();
-        foreach(array_rand ($all_hash_tags , 5) as $tags_key) {
-            array_push ( $hash_tags, $all_hash_tags[$tags_key] );
+            $hash_tags = array();
+            foreach(array_rand ($all_hash_tags , 5) as $tags_key) {
+                array_push ( $hash_tags, $all_hash_tags[$tags_key] );
+            }
+
+            return view('sessions/create', ['all_hash_tags' => $all_hash_tags, 'hash_tags' => $hash_tags]);
+        } else {
+            return redirect() -> route('root');
         }
-
-        return view('sessions/create', ['all_hash_tags' => $all_hash_tags, 'hash_tags' => $hash_tags]);
     }
 
     public function store(Request $request)
