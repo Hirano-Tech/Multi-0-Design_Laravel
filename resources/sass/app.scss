@@ -16,14 +16,12 @@ body {
     }
 
     .Side_Menu {
-        .Title_Menu {
+        @mixin Side_Menu-Title {
             font-size: 1.1rem;
             font-weight: bold;
             border-bottom: solid 1px #333333;
             padding: 16px 0 0 4px;
-            margin-bottom: 16px;
             position: relative;
-            .fa-bars { margin-right: 4px; }
 
             &::before {
                 content: attr(data-en);
@@ -35,6 +33,12 @@ body {
                     top: 0px;
                     left: 0px;
             }
+        }
+
+        .Title_Menu {
+            @include Side_Menu-Title;
+            .fa-bars { margin-right: 4px; }
+            margin-bottom: 16px;
         }
 
         @mixin Side_Menu-Link {
@@ -58,6 +62,32 @@ body {
             @include Side_Menu-Link;
             margin: 0 auto;
             .fa-user-plus { margin-right: 4px; }
+        }
+
+        .Title_Login {
+            @include Side_Menu-Title;
+            .fa-sign-in-alt { margin-right: 4px; }
+            margin: 24px 0 16px;
+        }
+
+        .Side_Menu-Login {
+            width: 80%;
+            margin: 0 auto;
+            .fa-at { margin-right: 4px; }
+            .fa-key { margin-right: 4px; }
+
+            &--Input {
+                height: 2.0rem;
+                padding: 0 8px;
+                margin: -4px 0 16px;
+            }
+
+            &--Submit {
+                width: 100%;
+                font-size: 0.8rem;
+                padding: 2px 8px;
+                margin-top: -16px;
+            }
         }
     }
 
