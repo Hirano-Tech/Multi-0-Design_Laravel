@@ -15,26 +15,26 @@ body {
         }
     }
 
-    .Side_Menu {
-        @mixin Side_Menu-Title {
-            font-size: 1.1rem;
-            font-weight: bold;
-            border-bottom: solid 1px #333333;
-            padding: 16px 0 0 4px;
-            position: relative;
+    @mixin Side_Menu-Title {
+        font-size: 1.1rem;
+        font-weight: bold;
+        border-bottom: solid 1px #333333;
+        padding: 16px 0 0 4px;
+        position: relative;
 
-            &::before {
-                content: attr(data-en);
-                font-size: 1.75rem;
-                font-weight: normal;
-                color: rgba(#333333, 0.2);
-                text-transform: uppercase;
-                position: absolute;
-                    top: 0px;
-                    left: 0px;
-            }
+        &::before {
+            content: attr(data-en);
+            font-size: 1.75rem;
+            font-weight: normal;
+            color: rgba(#333333, 0.2);
+            text-transform: uppercase;
+            position: absolute;
+                top: 0px;
+                left: 0px;
         }
+    }
 
+    .Side_Menu {
         .Title_Menu {
             @include Side_Menu-Title;
             .fa-bars { margin-right: 4px; }
@@ -83,10 +83,10 @@ body {
             }
 
             &--Submit {
-                width: 100%;
-                font-size: 0.8rem;
-                padding: 2px 8px;
-                margin-top: -16px;
+                width: 80%;
+                height: 2.0rem;
+                font-size: 0.9rem;
+                margin: -12px 0 0 20px;
             }
         }
     }
@@ -195,6 +195,40 @@ body {
     }
 
     .Sign-Up {
+        margin-left: 40px;
 
+        .Title_Menu {
+            @include Side_Menu-Title;
+            .fa-user-plus { margin-right: 4px; }
+            margin-bottom: 16px;
+        }
+
+        @mixin Resist_Form {
+            display: flex;
+                flex-direction: row;
+
+            &--Label {
+                width: 330px;
+                margin-top: 4px;
+            }
+        }
+
+        &__Name { @include Resist_Form; }
+        &__Mail { @include Resist_Form; }
+        &__Password { @include Resist_Form; }
+        &__Password-Confirm {
+            @include Resist_Form;
+            &--Label {
+                label {
+                    span { font-size: 0.8rem; }
+                }
+            }
+        }
+
+        &--Submit {
+            width: 62%;
+            font-size: 0.9rem;
+            margin: -24px 0 0 200px;
+        }
     }
 }
