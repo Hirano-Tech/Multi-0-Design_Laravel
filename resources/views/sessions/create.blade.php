@@ -31,7 +31,7 @@
                     @csrf
                     <div class='Side_Menu-Login form-group'>
                         <label for='email'><i class='fas fa-at'></i>メールアドレス</label>：
-                        <input type='email' name='email' class='Side_Menu-Login--Input form-control' id='email' inputmode='email' autocomplete='email' required />
+                        <input type='email' name='email' class='Side_Menu-Login--Input form-control' id='email' inputmode='email' autocomplete='email' required autofocus />
                     </div>
 
                     <div class='Side_Menu-Login form-group'>
@@ -39,10 +39,8 @@
                         <input type='password' name='password' class='Side_Menu-Login--Input form-control' id='password' inputmode='text' autocomplete='off' required />
                     </div>
 
-                    <div class='Side_Menu-Login form-group'>
-                        <a href="javascript:document.SignIn_Form.submit()" class='Side_Menu-Login--Submit btn btn-outline-primary'>
-                            ログイン
-                        </a>
+                    <div class='form-group'>
+                        <input type='submit' value='ログイン' class='Side_Menu-Login--Submit form-control btn btn-outline-primary' />
                     </div>
                 </form>
             </section>
