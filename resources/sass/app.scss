@@ -15,7 +15,55 @@ body {
         }
     }
 
+    .Side_Menu {
+        .Title_Menu {
+            font-size: 1.1rem;
+            font-weight: bold;
+            border-bottom: solid 1px #333333;
+            padding: 16px 0 0 4px;
+            margin-bottom: 16px;
+            position: relative;
+            .fa-bars { margin-right: 4px; }
+
+            &::before {
+                content: attr(data-en);
+                font-size: 1.75rem;
+                font-weight: normal;
+                color: rgba(#333333, 0.2);
+                text-transform: uppercase;
+                position: absolute;
+                    top: 0px;
+                    left: 0px;
+            }
+        }
+
+        @mixin Side_Menu-Link {
+            width: 80%;
+            padding: 2px 8px;
+            margin: 0 auto 8px;
+            display: block;
+        }
+
+        &__Home {
+            @include Side_Menu-Link;
+            .fa-home { margin-right: 4px; }
+        }
+
+        &__SignIn {
+            @include Side_Menu-Link;
+            .fa-sign-in-alt { margin-right: 4px; }
+        }
+
+        &__SignUp {
+            @include Side_Menu-Link;
+            margin: 0 auto;
+            .fa-user-plus { margin-right: 4px; }
+        }
+    }
+
     .GU_Staff {
+        margin-left: 16px;
+
         &__Title {
             margin-bottom: 16px;
 
