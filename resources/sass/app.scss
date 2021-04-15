@@ -64,6 +64,11 @@ body {
             .fa-user-plus { margin-right: 4px; }
         }
 
+        &__SignOut {
+            @include Side_Menu-Link;
+            .fa-sign-out-alt { margin-right: 4px; }
+        }
+
         .Title_Login {
             @include Side_Menu-Title;
             .fa-sign-in-alt { margin-right: 4px; }
@@ -92,7 +97,7 @@ body {
     }
 
     .GU_Staff {
-        margin-left: 16px;
+        margin: 36px 0 0 16px;
 
         &__Title {
             margin-bottom: 16px;
@@ -189,6 +194,65 @@ body {
                             margin-top: -2px;
                         }
                     }
+                }
+            }
+        }
+
+        .GU_Product {
+            margin: 32px 0 0 48px;
+
+            &--Title {
+                font-size: 1.1rem;
+                font-weight: bold;
+                padding-left: 56px;
+                position: relative;
+
+                &::before {
+                    content: attr(data-number);
+                    color: rgba(#333333, 0.2);
+                    font-size: 2.5rem;
+                    font-weight: normal;
+                    transform: translateY(-50%);
+                    position: absolute;
+                        top: 50%;
+                        left: 0;
+                }
+
+                &::after {
+                    content: '';
+                    background-color: rgba(#333333, 0.2);
+                    width: 100px;
+                    height: 1px;
+                    position: absolute;
+                        left: 0;
+                        bottom: 0;
+                }
+
+                span {
+                    font-size: 0.8rem;
+                    font-weight: normal;
+                }
+            }
+
+            &__Form {
+                margin: 16px 0 0 56px;
+                display: flex;
+                    flex-direction: row;
+
+                &--Input {
+                    height: 2.0rem;
+                    border: solid 1px rgba(#333333, 0.3);
+                    border-radius: 6px;
+                }
+
+                &--Help {
+                    margin: -2px 0 0 64px;
+                }
+
+                &--Submit {
+                    height: 2.0rem;
+                    padding: 0 8px;
+                    margin-left: -32px;
                 }
             }
         }
