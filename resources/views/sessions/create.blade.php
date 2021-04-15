@@ -60,7 +60,7 @@
                     <p class='GU_Staff__Title--Mute text-muted'>ジーユーのおしゃリスタ（コーディネートアドバイザー）のスタイリングコレクション</p>
                 </div>
 
-                <form action={{ route('gu_staff.store') }} class='GU_Staff__Form' id='GU-Staff_Form' target='_blank' method='POST'>
+                <form action={{ route('gu_staff_search') }} class='GU_Staff__Form' id='GU-Staff_Form' target='_blank' method='POST'>
                     @csrf
                     <div class='GU_Staff__Form__Gender'>
                         <p class='GU_Staff__Form__Gender--Title badge badge-secondary'>性別</p>
