@@ -9,7 +9,7 @@
 
     Route::get('/users/sign_up', 'RegistrationsController@create') -> name('new_user_registration');
     Route::post('/users', 'RegistrationsController@store') -> name('user_registration');
-    Route::get('/users/{id}/edit', 'RegistrationsController@edit') -> name('edit_user_registration');
+    Route::get('/users/{user}/edit', 'RegistrationsController@edit') -> name('edit_user_registration');
     Route::match(['put', 'patch'], '/users/{id}', 'RegistrationsController@update');
     Route::delete('/users/{id}', 'RegistrationsController@destroy');
 
