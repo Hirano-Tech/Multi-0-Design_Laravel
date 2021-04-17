@@ -1,0 +1,65 @@
+header {
+    height: 48px;
+    box-shadow: 0 8px 8px -8px rgba(#333333, 0.2);
+    margin-bottom: 32px;
+
+    .Header {
+        height: 48px;
+        display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+        h1 {
+            font-size: 1.75rem;
+            font-weight: bold;
+            margin-top: 4px;
+        }
+
+        &__Menu {
+            display: flex;
+                flex-direction: row;
+
+            &--SignIn {
+                .fa-sign-in-alt { margin-right: 4px; }
+                .fa-user-plus { margin-right: 4px; }
+                height: 32px;
+                font-size: 0.9rem;
+                padding: 4px 8px;
+            }
+
+            &--SignOut {
+                .fa-sign-out-alt { margin-right: 4px; }
+                height: 32px;
+                font-size: 0.9rem;
+                padding: 4px 8px;
+            }
+        }
+
+        .Mobile__Menu {
+            display: none;
+        }
+    }
+
+    @media (max-width: 575.98px) {
+        height: 40px;
+
+        .Header {
+            &__Menu { display: none; }
+            height: 40px;
+
+            h1 {
+                font-size: 1.25rem;
+                margin: 0 0 0 -16px;
+            }
+
+            .Mobile__Menu {
+                display: block;
+
+                button {
+                    padding: 2px 8px;
+                    margin: 0 -16px 0 0;
+                }
+            }
+        }
+    }
+}
