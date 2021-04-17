@@ -1,0 +1,89 @@
+@mixin Side_Menu-Title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    border-bottom: solid 1px #333333;
+    padding: 16px 0 0 4px;
+    position: relative;
+
+    &::before {
+        content: attr(data-en);
+        font-size: 1.75rem;
+        font-weight: normal;
+        color: rgba(#333333, 0.2);
+        text-transform: uppercase;
+        position: absolute;
+            top: 0px;
+            left: 0px;
+    }
+}
+
+.Side_Menu {
+    .Title_Menu {
+        @include Side_Menu-Title;
+        .fa-bars { margin-right: 4px; }
+        margin-bottom: 16px;
+    }
+
+    @mixin Side_Menu-Link {
+        width: 80%;
+        height: 1.75em;
+        font-size: 0.9rem;
+        padding: 1px 0;
+        margin: 0 auto 8px;
+        display: block;
+    }
+
+    &__Home {
+        @include Side_Menu-Link;
+        .fa-home { margin-right: 4px; }
+    }
+
+    &__SignIn {
+        @include Side_Menu-Link;
+        .fa-sign-in-alt { margin-right: 4px; }
+    }
+
+    &__SignUp {
+        @include Side_Menu-Link;
+        margin: 0 auto;
+        .fa-user-plus { margin-right: 4px; }
+    }
+
+    &__Edit {
+        @include Side_Menu-Link;
+        .fa-user-circle { margin-right: 4px; }
+    }
+
+    &__SignOut {
+        @include Side_Menu-Link;
+        .fa-sign-out-alt { margin-right: 4px; }
+    }
+
+    .Title_Login {
+        @include Side_Menu-Title;
+        .fa-sign-in-alt { margin-right: 4px; }
+        margin: 32px 0 16px;
+    }
+
+    .Side_Menu-Login {
+        width: 80%;
+        font-size: 0.8rem;
+        margin: 0 auto;
+        .fa-at { margin-right: 4px; }
+        .fa-key { margin-right: 4px; }
+
+        &--Input {
+            height: 1.75em;
+            padding: 0 8px;
+            margin: -6px 0 16px;
+        }
+
+        &--Submit {
+            width: 80%;
+            height: 1.75em;
+            font-size: 0.9rem;
+            padding: 0;
+            margin: -16px 0 0 20px;
+        }
+    }
+}

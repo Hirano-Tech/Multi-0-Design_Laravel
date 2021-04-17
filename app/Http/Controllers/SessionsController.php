@@ -26,7 +26,7 @@ class SessionsController extends Controller
                 array_push ( $hash_tags, $all_hash_tags[$tags_key] );
             }
 
-            return view('sessions/create', ['all_hash_tags' => $all_hash_tags, 'hash_tags' => $hash_tags]);
+            return view('index', ['all_hash_tags' => $all_hash_tags, 'hash_tags' => $hash_tags]);
         } else {
             return redirect() -> route('root');
         }
