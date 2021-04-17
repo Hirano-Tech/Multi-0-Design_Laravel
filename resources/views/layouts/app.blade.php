@@ -33,7 +33,7 @@
                             </a>
                         @else
                             <a href="{{ route('new_user_registration') }}" class='Header__Menu--SignIn btn btn-outline-dark'>
-                            <i class='fas fa-user-plus'></i>新規登録
+                                <i class='fas fa-user-plus'></i>新規登録
                             </a>
                         @endif
                     @endguest
@@ -43,10 +43,16 @@
                     <button type='button' class='btn btn-light dropdown-toggle' id='dropdownMenuButton' data-toggle='dropdown'  >
                         <i class='fas fa-bars'></i>
                     </button>
-                    <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <a class="dropdown-item" href="#">Something else here</a>
+                    <div class='dropdown-menu' aria-labelledby='dropdownMenuButton'>
+                        <a href="{{ route('root') }}" class='dropdown-item'>
+                            <i class='fas fa-home'></i>ホーム
+                        </a>
+                        <a href="{{ route('new_user_session') }}" class='dropdown-item'>
+                            <i class='fas fa-sign-in-alt'></i>ログイン
+                        </a>
+                        <a href="{{ route('new_user_registration') }}" class='dropdown-item'>
+                            <i class='fas fa-user-plus'></i>新規登録
+                        </a>
                     </div>
                 </div>
             </div>

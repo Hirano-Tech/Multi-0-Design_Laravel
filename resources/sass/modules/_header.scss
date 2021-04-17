@@ -4,6 +4,7 @@ header {
     margin-bottom: 32px;
 
     .Header {
+        .Mobile__Menu { display: none; }
         height: 48px;
         display: flex;
             justify-content: space-between;
@@ -33,10 +34,6 @@ header {
                 font-size: 0.9rem;
                 padding: 4px 8px;
             }
-        }
-
-        .Mobile__Menu {
-            display: none;
         }
     }
 
