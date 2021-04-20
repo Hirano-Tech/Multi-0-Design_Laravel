@@ -3,6 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\Models\GU_Product;
+use Goutte\Client;
 
 class GU_ProductsController extends Controller
 {
@@ -43,7 +46,8 @@ class GU_ProductsController extends Controller
         $product -> user_id = Auth::id();
         $product -> save();
 
-        return redirect() -> route('root');    }
+        return redirect() -> route('root');
+    }
 
     /**
      * Display the specified resource.
@@ -87,6 +91,7 @@ class GU_ProductsController extends Controller
      */
     public function destroy($id)
     {
-        //
+        GU_Product::find($id) -> delete();
+        return redirect() -> route('edit_user_registration', ['user' => Auth::id()]);
     }
 }
