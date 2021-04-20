@@ -70,27 +70,23 @@
                     </a>
 
                     @guest
-                        <a href="{{ route('new_user_session') }}" class='Side_Menu__SignIn btn btn-outline-dark'>
-                            <i class='fas fa-sign-in-alt'></i>ログイン
-                        </a>
+                        @unless (str_contains(url() -> current(), 'users/sign_in'))
+                            <a href="{{ route('new_user_session') }}" class='Side_Menu__SignIn btn btn-outline-dark'>
+                                <i class='fas fa-sign-in-alt'></i>ログイン
+                            </a>
+                        @endunless
 
-                        <a href="{{ route('new_user_registration') }}" class='Side_Menu__SignUp btn btn-outline-dark'>
-                            <i class='fas fa-user-plus'></i>新規登録
-                        </a>
+                        @unless (str_contains(url() -> current(), 'users/sign_up'))
+                            <a href="{{ route('new_user_registration') }}" class='Side_Menu__SignUp btn btn-outline-dark'>
+                                <i class='fas fa-user-plus'></i>新規登録
+                            </a>
+                        @endunless
                     @endguest
 
                     @auth
                         <a href="{{ route('edit_user_registration', ['user' => Auth::id()]) }}" class='Side_Menu__Edit btn btn-outline-dark'>
                             <i class='fas fa-user-circle'></i>マイページ
                         </a>
-
-                        <form action="{{ route('destroy_user_session') }}" name='' method='POST'>
-                            <input type='hidden' name='_method' value='DELETE' />
-                            <input type='hidden' name='_token' value="{{ csrf_token() }}" />
-                            <a href="javascript:document.SignOut_Form.submit()" class='Side_Menu__SignOut btn btn-outline-dark'>
-                                <i class='fas fa-sign-out-alt'></i>ログアウト
-                            </a>
-                        </form>
                     @endauth
 
                     @if (str_contains(url() -> current(), 'users/sign_in'))
