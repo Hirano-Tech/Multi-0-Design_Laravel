@@ -1,5 +1,8 @@
 @import 'vendor/twbs/bootstrap/scss/bootstrap';
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+JP:wght@400;700&family=Parisienne&display=swap');
+
+@import 'modules/header';
+@import 'modules/left-side';
 
 body {
     font-family: 'Noto Serif JP', serif;
@@ -12,87 +15,6 @@ body {
         &:hover {
             color: #333333;
             text-decoration: none;
-        }
-    }
-
-    @mixin Side_Menu-Title {
-        font-size: 1.1rem;
-        font-weight: bold;
-        border-bottom: solid 1px #333333;
-        padding: 16px 0 0 4px;
-        position: relative;
-
-        &::before {
-            content: attr(data-en);
-            font-size: 1.75rem;
-            font-weight: normal;
-            color: rgba(#333333, 0.2);
-            text-transform: uppercase;
-            position: absolute;
-                top: 0px;
-                left: 0px;
-        }
-    }
-
-    .Side_Menu {
-        .Title_Menu {
-            @include Side_Menu-Title;
-            .fa-bars { margin-right: 4px; }
-            margin-bottom: 16px;
-        }
-
-        @mixin Side_Menu-Link {
-            width: 80%;
-            padding: 2px 8px;
-            margin: 0 auto 8px;
-            display: block;
-        }
-
-        &__Home {
-            @include Side_Menu-Link;
-            .fa-home { margin-right: 4px; }
-        }
-
-        &__SignIn {
-            @include Side_Menu-Link;
-            .fa-sign-in-alt { margin-right: 4px; }
-        }
-
-        &__SignUp {
-            @include Side_Menu-Link;
-            margin: 0 auto;
-            .fa-user-plus { margin-right: 4px; }
-        }
-
-        &__SignOut {
-            @include Side_Menu-Link;
-            .fa-sign-out-alt { margin-right: 4px; }
-        }
-
-        .Title_Login {
-            @include Side_Menu-Title;
-            .fa-sign-in-alt { margin-right: 4px; }
-            margin: 24px 0 16px;
-        }
-
-        .Side_Menu-Login {
-            width: 80%;
-            margin: 0 auto;
-            .fa-at { margin-right: 4px; }
-            .fa-key { margin-right: 4px; }
-
-            &--Input {
-                height: 2.0rem;
-                padding: 0 8px;
-                margin: -4px 0 16px;
-            }
-
-            &--Submit {
-                width: 80%;
-                height: 2.0rem;
-                font-size: 0.9rem;
-                margin: -12px 0 0 20px;
-            }
         }
     }
 
@@ -283,9 +205,7 @@ body {
         &__Password-Confirm {
             @include Resist_Form;
             &--Label {
-                label {
-                    span { font-size: 0.8rem; }
-                }
+                label {span { font-size: 0.8rem; }}
             }
         }
 
@@ -293,6 +213,75 @@ body {
             width: 62%;
             font-size: 0.9rem;
             margin: -24px 0 0 200px;
+        }
+    }
+
+    .User_MyPage {
+        .Title_Menu {
+            @include Side_Menu-Title;
+            .fa-user-circle { margin-right: 4px; }
+        }
+
+        &--Title {
+            font-size: 1.0rem;
+            font-weight: bold;
+            padding-left: 44px;
+            margin-top: 32px;
+            position: relative;
+
+            &::before {
+                content: attr(data-number);
+                color: rgba(#333333, 0.2);
+                font-size: 2.0rem;
+                font-weight: normal;
+                transform: translateY(-50%);
+                position: absolute;
+                    top: 50%;
+                    left: 0;
+            }
+
+            &::after {
+                content: '';
+                background-color: rgba(#333333, 0.2);
+                width: 100px;
+                height: 1px;
+                position: absolute;
+                    left: 0;
+                    bottom: 0;
+            }
+        }
+
+        &__Profile {
+            margin: 16px 0 0 44px;
+
+            .badge {
+                margin-bottom: 8px;
+                position: relative;
+                    top: -2px;
+            }
+        }
+
+        &__Bookmark {
+            margin-top: 16px;
+
+            &--Number {
+                width: 5.5em;
+                text-align: center;
+            }
+
+            &--Name {
+                text-align: center;
+            }
+
+            &--Date {
+                width: 9.5em;
+                text-align: center;
+            }
+
+            &--Delete {
+                width: 3.5em;
+                text-align: center;
+            }
         }
     }
 }
