@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\User;
+use App\Models\GU_Product;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
@@ -45,7 +46,9 @@ class RegistrationsController extends Controller
 
     public function edit(User $user)
     {
-        //
+        $products = $user -> gu_products() -> where('user_id', $user -> id) -> get();
+
+        return view('registrations.edit', ['user' => $user, 'products' => $products]);
     }
 
     public function update(Request $request, User $user)
