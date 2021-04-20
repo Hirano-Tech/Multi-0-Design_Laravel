@@ -1,6 +1,6 @@
 <?php
     Route::get('/', 'RootsController@index') -> name('root');
-    Route::resource('/gu_product', 'GU_ProductsController') -> only(['store', 'show']);
+    Route::resource('/gu_product', 'GU_ProductsController') -> only(['store', 'destroy']);
     Route::post('/gu_staff_search', 'GU_SearchesController@search') -> name('gu_staff_search');
 
     Route::get('/users/sign_in', 'SessionsController@create') -> name('new_user_session');
