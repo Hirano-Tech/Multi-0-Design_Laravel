@@ -54500,27 +54500,15 @@ __webpack_require__.r(__webpack_exports__);
 
 /***/ }),
 
-/***/ "./resources/sass/header.scss":
-/*!************************************!*\
-  !*** ./resources/sass/header.scss ***!
-  \************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ 0:
-/*!******************************************************************************************!*\
-  !*** multi ./resources/js/app.js ./resources/sass/app.scss ./resources/sass/header.scss ***!
-  \******************************************************************************************/
+/*!*************************************************************!*\
+  !*** multi ./resources/js/app.js ./resources/sass/app.scss ***!
+  \*************************************************************/
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /var/www/Multi-0-Design/resources/js/app.js */"./resources/js/app.js");
-__webpack_require__(/*! /var/www/Multi-0-Design/resources/sass/app.scss */"./resources/sass/app.scss");
-module.exports = __webpack_require__(/*! /var/www/Multi-0-Design/resources/sass/header.scss */"./resources/sass/header.scss");
+__webpack_require__(/*! /Users/hirano-masakazu/Desktop/Multi-0-Design_Laravel/Source/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/hirano-masakazu/Desktop/Multi-0-Design_Laravel/Source/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
